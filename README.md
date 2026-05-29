@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OLSWEN Security & Intelligence Website
+
+Premium responsive website for **Olswen Security & Intelligence** — built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** — scroll reveals & micro-interactions
+- **Lucide React** — icons
+- **Inter** + **Space Grotesk** — typography
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd olswen-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this folder to [github.com/klmayua/olswen](https://github.com/klmayua/olswen)
+2. Import the repository in [Vercel](https://vercel.com)
+3. Set root directory to `olswen-website`
+4. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+olswen-website/
+├── app/                  # Routes, layout, SEO
+├── components/           # UI components & sections
+├── constants/            # Brand colors, content, images
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities
+└── public/assets/        # Logo & supplied imagery
+```
 
-## Deploy on Vercel
+## Brand Colors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Extracted from supplied design system:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Token | Hex |
+|-------|-----|
+| Background (Obsidian) | `#0A0A0D` |
+| Surface Container | `#16161D` |
+| Primary (Royal Indigo) | `#CEBDFF` |
+| Primary Container | `#3B2578` |
+| Gold Accent | `#C6A15B` |
+
+## Contact
+
+- **Phone:** +234 708 936 0094 / +234 802 861 1141
+- **Address:** E185, Ikota Shopping Complex, VGC, Lagos, Nigeria
