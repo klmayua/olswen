@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import { siteConfig, navLinks } from '@/constants/content'
+import { IconMapPin, IconPhone, IconMail } from './icons/Icons'
 
 const serviceLinks = [
   'Intelligence & Risk Management',
@@ -23,7 +24,7 @@ export default function Footer() {
               <Image src={images.logo} alt="Olswen logo" width={42} height={42} style={{ objectFit: 'contain' }} />
               <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.05rem', fontWeight: 800, color: '#fff' }}>OLSWEN</span>
             </div>
-            <p style={{ fontSize: '0.87rem', lineHeight: 1.7, maxWidth: 280, marginBottom: '1.25rem' }}>Nigeria&apos;s intelligence-first security consultancy. Founded 2018, VGC Lagos. RC 1466641.</p>
+            <p style={{ fontSize: '0.87rem', lineHeight: 1.7, maxWidth: 280, marginBottom: '1.25rem' }}>Intelligence-led security operations for Nigeria’s most demanding environments. Founded 2018. RC 1466641.</p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.72rem', fontWeight: 700, color: '#d8be70' }}>Powered by ZumaGrid</span>
               <span style={{ background: 'rgba(201,169,74,0.15)', border: '1px solid rgba(201,169,74,0.3)', fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#d8be70', padding: '0.2rem 0.65rem', borderRadius: 9999 }}>Founding Operator</span>
@@ -62,14 +63,14 @@ export default function Footer() {
           <div>
             <div style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '1.1rem' }}>Contact</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
-              <li style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>📍 <span>{siteConfig.address}</span></li>
+              <li style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}><IconMapPin size={14} style={{flexShrink:0,marginTop:'0.2rem',color:'rgba(255,255,255,0.4)'}} /><span>{siteConfig.address}</span></li>
               {siteConfig.phones.map(p => (
-                <li key={p} style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>📞 <a href={`tel:${p.replace(/\s/g,'')}`} style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                <li key={p} style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><IconPhone size={14} style={{flexShrink:0,color:'rgba(255,255,255,0.4)'}} /><a href={`tel:${p.replace(/\s/g,'')}`} style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => ((e.target as HTMLAnchorElement).style.color = '#fff')}
                   onMouseLeave={e => ((e.target as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)')}
                 >{p}</a></li>
               ))}
-              <li style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>📧 <a href={`mailto:${siteConfig.emails[0]}`} style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+              <li style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><IconMail size={14} style={{flexShrink:0,color:'rgba(255,255,255,0.4)'}} /><a href={`mailto:${siteConfig.emails[0]}`} style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => ((e.target as HTMLAnchorElement).style.color = '#fff')}
                 onMouseLeave={e => ((e.target as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)')}
               >{siteConfig.emails[0]}</a></li>

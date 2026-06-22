@@ -5,29 +5,29 @@ import ScrollReveal from './ScrollReveal'
 
 const solutions = [
   {
-    img: images.eventSolutions,
+    img: images.stadiumOperations,
     alt: 'Event security',
     eyebrow: 'Event Security',
-    title: 'Mass Events. Zero Compromise.',
-    desc: 'Full-spectrum event security architecture from pre-event intelligence to post-event debrief. Multi-state tours, stadium events, and broadcast productions — Olswen builds the security layer that lets everything else run.',
+    title: 'Mass Events. No Margin for Error.',
+    desc: 'Pre-event intelligence. Access control architecture. Live command coordination with state security agencies. Post-event debrief. Olswen has secured stadium events, four-state national tours, and global broadcast productions — building the security layer that lets everything else run.',
     tags: ['Concerts', 'Sports', 'National Tours', 'Broadcast Events'],
     wide: true,
   },
   {
-    img: images.vipProtection,
+    img: images.vipDetail,
     alt: 'VIP protection',
     eyebrow: 'Close Protection',
-    title: 'VIP & Executive Protection',
-    desc: 'Advance intelligence, route planning, and close protection teams for artists, executives, athletes, and dignitaries operating in Nigeria.',
+    title: 'VIP & Executive Close Protection',
+    desc: 'Advance route intelligence, threat profiling, and close protection teams for high-profile principals — artists, executives, athletes, and visiting dignitaries operating across Nigeria.',
     tags: ['Celebrities', 'Executives', 'Athletes'],
     wide: false,
   },
   {
-    img: images.operationsCollage,
+    img: images.operativePortrait,
     alt: 'Security operations',
     eyebrow: 'Guard Deployment',
-    title: 'Elite Personnel Deployment',
-    desc: 'Three-tier structure — Regular, Premium, and Supervisory — with ZumaGrid biometric accountability from day one.',
+    title: 'Professional Guard Deployment',
+    desc: 'Regular, Premium, and Supervisory tiers. Every guard is biometrically verified through ZumaGrid from day one. Personnel accountability that paper logs cannot provide.',
     tags: ['Facilities', 'Sites', 'Estates'],
     wide: false,
   },
@@ -39,8 +39,8 @@ export default function SolutionsSection() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, marginBottom: '4rem' }}>
-            <span className="eyebrow">In Action</span>
-            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, color: '#0c0a18' }}>Security Built for Every Environment</h2>
+            <span className="eyebrow">In the Field</span>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, color: '#0c0a18' }}>Three Environments. One Standard of Excellence.</h2>
           </div>
         </ScrollReveal>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="sols-grid">

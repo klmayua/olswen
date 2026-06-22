@@ -4,11 +4,12 @@ import { siteConfig } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
 
 const galleryItems = [
-  { img: images.guardPremium,      alt: 'Olswen premium guard',        label: 'Elite Security Personnel',      tall: true },
-  { img: images.eventSolutions,    alt: 'Event security operations',    label: 'Event Security Architecture',   tall: false },
-  { img: images.vipProtection,     alt: 'VIP protection',               label: 'VIP & Close Protection',        tall: false },
-  { img: images.deployments,       alt: 'Operations portfolio',         label: 'Operational Portfolio',          tall: false },
-  { img: images.patrolVehicle,     alt: 'Patrol vehicle',               label: 'Patrol & Mobile Response',      tall: false },
+  { img: images.operationalAssets,  alt: 'Olswen operational assets',    label: 'Operational Scale',             tall: true },
+  { img: images.operativePortrait,  alt: 'Olswen premium guard',         label: 'Elite Security Personnel',      tall: false },
+  { img: images.vipDetail,          alt: 'VIP protection detail',        label: 'VIP & Close Protection',        tall: false },
+  { img: images.stadiumOperations,  alt: 'Stadium security operations',  label: 'Event Security Operations',     tall: false },
+  { img: images.patrolVehicle,      alt: 'Patrol vehicle',               label: 'Patrol & Mobile Response',      tall: false },
+  { img: images.eventVenue,         alt: 'Event venue solutions',        label: 'Event Solutions',               tall: false },
 ]
 
 export default function GallerySection() {
@@ -17,9 +18,9 @@ export default function GallerySection() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 500, marginBottom: '4rem' }}>
-            <span className="eyebrow">Gallery</span>
-            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Operations in the Field</h2>
-            <p style={{ color: '#4a4560', lineHeight: 1.75 }}>A visual record of Olswen&apos;s operational deployments, personnel, and event security work.</p>
+            <span className="eyebrow">Operations Gallery</span>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Documented. Deployed. Delivered.</h2>
+            <p style={{ color: '#4a4560', lineHeight: 1.75 }}>A visual record from the field — NFL Africa, stadium tours, close protection details, and permanent facility deployments.</p>
           </div>
         </ScrollReveal>
         <ScrollReveal>
@@ -41,7 +42,7 @@ export default function GallerySection() {
           </div>
         </ScrollReveal>
         <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-          <a href={siteConfig.linktree} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 9999, background: 'transparent', color: '#5c43c8', border: '1.5px solid #a28fe6', textDecoration: 'none' }}>View Full Portfolio →</a>
+          <a href={siteConfig.linktree} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: 'transparent', color: '#5c43c8', border: '1.5px solid #a28fe6', textDecoration: 'none' }}>View Full Portfolio →</a>
         </div>
       </div>
       <style>{`

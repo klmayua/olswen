@@ -4,7 +4,7 @@ import { siteConfig } from '@/constants/content'
 
 export default function Hero() {
   return (
-    <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', background: 'linear-gradient(145deg,#1e1442 0%,#2d1f63 45%,#3d2a8a 100%)', overflow: 'hidden', paddingTop: 76 }}>
+    <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', background: 'linear-gradient(145deg,#1e1442 0%,#2d1f63 45%,#3d2a8a 100%)', overflow: 'hidden', paddingTop: 'calc(64px + 1rem + 4rem)' }}>
       {/* Dot grid */}
       <div className="dot-grid" style={{ position: 'absolute', inset: 0 }} />
       {/* Glow */}
@@ -15,21 +15,21 @@ export default function Hero() {
         <div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 9999, padding: '0.4rem 1rem', marginBottom: '1.75rem', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)' }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#d8be70', flexShrink: 0, animation: 'pulse 2s infinite', display: 'inline-block' }} />
-            Nigeria&apos;s Premier Security Intelligence Firm
+            Nigeria&apos;s Intelligence-Led Security Firm
           </div>
           <h1 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: 'clamp(2.4rem,5vw,3.6rem)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.15, fontFamily: 'var(--font-space-grotesk)' }}>
             When Stakes Are Highest,{' '}
             <em className="text-gold-gradient" style={{ fontStyle: 'normal' }}>Olswen Delivers.</em>
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '1.1rem', maxWidth: 480, marginBottom: '2.5rem', lineHeight: 1.7 }}>
-            Intelligence-led security operations, close protection, and risk management for enterprises, events, and high-value individuals across Nigeria and Africa.
+            Intelligence-led security operations, close protection, and risk management — protecting Nigeria's most high-profile events, assets, and individuals.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', marginBottom: '3rem' }}>
-            <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 9999, background: '#c9a94a', color: '#fff', textDecoration: 'none', transition: 'all 0.2s' }}>
+            <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 8, background: '#c9a94a', color: '#fff', textDecoration: 'none', transition: 'all 0.2s' }}>
               Request Consultation →
             </a>
-            <a href="#engagements" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 9999, background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s' }}>
-              View Our Work
+            <a href="#engagements" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 8, background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s' }}>
+              View Engagements
             </a>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
@@ -45,7 +45,7 @@ export default function Hero() {
         <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
           <div style={{ position: 'relative', width: '100%', maxWidth: 520 }}>
             <div style={{ borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)', aspectRatio: '4/5', position: 'relative' }}>
-              <Image src={images.guardPremium} alt="Olswen elite security personnel" fill sizes="(max-width:860px) 100vw, 520px" style={{ objectFit: 'cover', objectPosition: 'top center' }} priority />
+              <Image src={images.operativePortrait} alt="Olswen elite security personnel" fill sizes="(max-width:860px) 100vw, 520px" style={{ objectFit: 'cover', objectPosition: 'top center' }} priority />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(30,20,66,0.6) 0%,transparent 50%)', borderRadius: 18 }} />
             </div>
             {/* Floating stat card */}

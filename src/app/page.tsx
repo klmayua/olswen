@@ -2,6 +2,7 @@ import Navbar              from '@/components/Navbar'
 import Hero                from '@/components/Hero'
 import TrustTicker         from '@/components/TrustTicker'
 import StatsBar            from '@/components/StatsBar'
+import TrustSignals        from '@/components/TrustSignals'
 import AboutSection        from '@/components/AboutSection'
 import ServicesSection     from '@/components/ServicesSection'
 import EngagementsSection  from '@/components/EngagementsSection'
@@ -25,6 +26,7 @@ export default function Home() {
       <Hero />
       <TrustTicker />
       <StatsBar />
+      <TrustSignals />
       <AboutSection />
       <ServicesSection />
       <EngagementsSection />

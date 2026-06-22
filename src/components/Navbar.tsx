@@ -1,56 +1,91 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import { navLinks, siteConfig } from '@/constants/content'
 import { scrollToSection } from '@/lib/utils'
+import { IconWhatsApp, IconMenu, IconClose } from './icons/Icons'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const heroRef = useRef<number>(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80)
+    // Measure hero height once
+    const hero = document.getElementById('hero')
+    if (hero) heroRef.current = hero.offsetHeight
+    const onScroll = () => {
+      const threshold = heroRef.current ? heroRef.current - 120 : 80
+      setScrolled(window.scrollY >= threshold)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const handleNav = (href: string) => {
     setMenuOpen(false)
-    const id = href.replace('#', '')
-    scrollToSection(id)
+    scrollToSection(href.replace('#', ''))
   }
 
-  const heroMode = !scrolled
+  const bar = scrolled
+    ? {
+        background: 'rgba(255,255,255,0.97)',
+        backdropFilter: 'blur(20px)',
+        border: '1px solid rgba(220,215,240,0.9)',
+        boxShadow: '0 4px 24px rgba(92,67,200,0.10)',
+      }
+    : {
+        background: 'rgba(20,14,50,0.55)',
+        backdropFilter: 'blur(18px)',
+        border: '1px solid rgba(255,255,255,0.10)',
+        boxShadow: 'none',
+      }
+
+  const logoName  = scrolled ? '#2d1f63' : '#fff'
+  const logoTag   = scrolled ? '#8a8599' : 'rgba(255,255,255,0.5)'
+  const linkColor = scrolled ? '#4a4560' : 'rgba(255,255,255,0.72)'
+  const linkHoverBg = scrolled ? 'rgba(92,67,200,0.06)' : 'rgba(255,255,255,0.08)'
+  const linkHoverColor = scrolled ? '#4c35b0' : '#fff'
+  const waColor   = scrolled ? '#4a4560' : 'rgba(255,255,255,0.65)'
+  const ctaBg     = scrolled ? '#5c43c8' : '#fff'
+  const ctaColor  = scrolled ? '#fff' : '#3d2a8a'
+  const hamColor  = scrolled ? '#2e2a44' : '#fff'
 
   return (
-    <nav
-      style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-        background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0)',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid #ede9f8' : '1px solid transparent',
-        boxShadow: scrolled ? '0 2px 20px rgba(92,67,200,0.08)' : 'none',
-        transition: 'all 0.35s',
-      }}
-    >
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 76 }}>
+    <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, pointerEvents: 'none' }}>
+      {/* Inner floating bar */}
+      <div style={{
+        maxWidth: 1120,
+        margin: '1rem auto 0',
+        borderRadius: 14,
+        padding: '0 1.75rem',
+        height: 64,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        pointerEvents: 'all',
+        transition: 'all 0.3s ease',
+        ...bar,
+      }}>
         {/* Logo */}
-        <button onClick={() => handleNav('#hero')} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}>
-          <Image src={images.logo} alt="Olswen logo" width={44} height={44} style={{ objectFit: 'contain' }} />
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 800, letterSpacing: '0.06em', color: heroMode ? '#fff' : '#3d2a8a', lineHeight: 1, transition: 'color 0.35s' }}>OLSWEN</span>
-            <span style={{ fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: heroMode ? 'rgba(255,255,255,0.5)' : '#8a8599', marginTop: '0.15rem', transition: 'color 0.35s' }}>Security · Intelligence</span>
+        <button onClick={() => handleNav('#hero')} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+          <Image src={images.logo} alt="Olswen logo" width={38} height={38} style={{ objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+            <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 800, letterSpacing: '0.08em', color: logoName, transition: 'color 0.3s' }}>OLSWEN</span>
+            <span style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: logoTag, marginTop: '0.05rem', transition: 'color 0.3s' }}>Security · Intelligence</span>
           </div>
         </button>
 
         {/* Desktop nav links */}
-        <ul style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
+        <ul style={{ display: 'flex', alignItems: 'center', gap: '0.125rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
           {navLinks.map(link => (
             <li key={link.href}>
               <button
                 onClick={() => handleNav(link.href)}
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: heroMode ? 'rgba(255,255,255,0.75)' : '#4a4560', padding: '0.5rem 0.9rem', borderRadius: 6, background: 'none', border: 'none', cursor: 'pointer', transition: 'all 0.2s' }}
+                style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.83rem', fontWeight: 500, color: linkColor, padding: '0.4rem 0.8rem', borderRadius: 7, background: 'none', border: 'none', cursor: 'pointer', transition: 'all 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.background = linkHoverBg; e.currentTarget.style.color = linkHoverColor }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.color = linkColor }}
               >
                 {link.label}
               </button>
@@ -58,20 +93,22 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right CTA */}
+        {/* Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="nav-right-desktop">
           <a
             href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', fontWeight: 600, color: heroMode ? 'rgba(255,255,255,0.7)' : '#4a4560', padding: '0.5rem 0.75rem', borderRadius: 6, textDecoration: 'none', transition: 'color 0.2s' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', fontWeight: 600, color: waColor, padding: '0.4rem 0.6rem', borderRadius: 7, textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.color = scrolled ? '#25d366' : '#4ade80')}
+            onMouseLeave={e => (e.currentTarget.style.color = waColor)}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <IconWhatsApp size={16} />
             WhatsApp
           </a>
           <button
             onClick={() => handleNav('#contact')}
-            style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.6rem 1.4rem', borderRadius: 9999, border: 'none', cursor: 'pointer', background: heroMode ? '#fff' : '#5c43c8', color: heroMode ? '#5c43c8' : '#fff', transition: 'all 0.35s' }}
+            style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.82rem', fontWeight: 700, padding: '0.55rem 1.25rem', borderRadius: 8, border: 'none', cursor: 'pointer', background: ctaBg, color: ctaColor, transition: 'all 0.3s', whiteSpace: 'nowrap' }}
           >
             Request Consultation
           </button>
@@ -80,33 +117,40 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', flexDirection: 'column', gap: 5, background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem' }}
+          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: hamColor, padding: '0.4rem', borderRadius: 6, lineHeight: 0 }}
           aria-label="Menu"
           className="hamburger-btn"
         >
-          <span style={{ display: 'block', width: 22, height: 2, background: heroMode ? '#fff' : '#2e2a44', borderRadius: 2, transition: 'all 0.3s' }} />
-          <span style={{ display: 'block', width: 22, height: 2, background: heroMode ? '#fff' : '#2e2a44', borderRadius: 2, transition: 'all 0.3s' }} />
-          <span style={{ display: 'block', width: 22, height: 2, background: heroMode ? '#fff' : '#2e2a44', borderRadius: 2, transition: 'all 0.3s' }} />
+          {menuOpen ? <IconClose size={20} /> : <IconMenu size={22} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile overlay */}
       {menuOpen && (
-        <div style={{ position: 'fixed', top: 76, left: 0, right: 0, bottom: 0, background: '#fff', padding: '2rem clamp(1.25rem,5vw,3.5rem)', borderTop: '1px solid #d8d5e6', zIndex: 999, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-          {navLinks.map(link => (
-            <button
-              key={link.href}
-              onClick={() => handleNav(link.href)}
-              style={{ fontSize: '1rem', fontWeight: 500, color: '#2e2a44', padding: '0.85rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid #eceaf4' }}
-            >
-              {link.label}
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#1e1442', zIndex: 999, display: 'flex', flexDirection: 'column', padding: '1.5rem clamp(1.25rem,5vw,2rem)', overflowY: 'auto', pointerEvents: 'all' }}>
+          {/* Mobile header */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+              <Image src={images.logo} alt="Olswen logo" width={36} height={36} style={{ objectFit: 'contain' }} />
+              <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 800, letterSpacing: '0.08em', color: '#fff' }}>OLSWEN</span>
+            </div>
+            <button onClick={() => setMenuOpen(false)} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, color: '#fff', padding: '0.5rem', cursor: 'pointer', lineHeight: 0 }}>
+              <IconClose size={20} />
             </button>
-          ))}
-          <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.85rem', borderRadius: 9999, border: '1.5px solid #25d366', color: '#25d366', fontWeight: 700, textDecoration: 'none' }}>
-              WhatsApp
+          </div>
+          {/* Links */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
+            {navLinks.map(link => (
+              <button key={link.href} onClick={() => handleNav(link.href)} style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.05rem', fontWeight: 500, color: 'rgba(255,255,255,0.8)', padding: '0.9rem 0', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.08)', cursor: 'pointer', textAlign: 'left', transition: 'color 0.2s' }}>
+                {link.label}
+              </button>
+            ))}
+          </div>
+          <div style={{ paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.9rem', borderRadius: 8, border: '1.5px solid #25d366', color: '#25d366', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem' }}>
+              <IconWhatsApp size={18} />WhatsApp
             </a>
-            <button onClick={() => handleNav('#contact')} style={{ padding: '0.85rem', borderRadius: 9999, background: '#5c43c8', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem' }}>
+            <button onClick={() => handleNav('#contact')} style={{ padding: '0.9rem', borderRadius: 8, background: '#5c43c8', color: '#fff', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: '0.9rem' }}>
               Request Consultation
             </button>
           </div>
@@ -114,7 +158,7 @@ export default function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 860px) {
+        @media (max-width: 900px) {
           .nav-links-desktop { display: none !important; }
           .nav-right-desktop { display: none !important; }
           .hamburger-btn { display: flex !important; }

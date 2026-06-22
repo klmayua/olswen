@@ -26,8 +26,8 @@ export const navLinks = [
 export const stats = [
   { num: '7+',  label: 'Years of Operations',    sub: 'Est. 2018, VGC Lagos' },
   { num: '50+', label: 'Major Engagements',       sub: 'National & international' },
-  { num: '4',   label: 'Active Retainer Clients', sub: 'Football clubs + corporates' },
-  { num: '2',   label: 'Forensic Diplomas',       sub: 'University of Lagos · 2021' },
+  { num: '4',   label: 'Active Retainer Contracts', sub: 'Across sports, healthcare & hospitality' },
+  { num: '2',   label: 'Intelligence Certifications', sub: 'Forensics & Criminal Intelligence' },
 ]
 
 export const services = [
@@ -164,11 +164,12 @@ export const faqs = [
 ]
 
 export const chatOptions = [
-  { label: '🎪 Event Security Enquiry',     msg: 'I need event security for an upcoming event.' },
-  { label: '🛡️ VIP / Close Protection',    msg: 'I need VIP or close protection services.' },
-  { label: '📡 ZumaGrid Deployment',        msg: "I'm interested in deploying ZumaGrid technology." },
-  { label: '🏢 Facility Guard Deployment',  msg: 'I need permanent facility security guards.' },
-  { label: '💬 General Enquiry',            msg: 'I have a general enquiry about Olswen services.' },
+  { label: '🎪 Event Security',            msg: 'I need event security for an upcoming event.' },
+  { label: '🛡️ VIP / Close Protection',   msg: 'I need VIP or close protection services.' },
+  { label: '📡 ZumaGrid Deployment',       msg: "I'm interested in deploying ZumaGrid on my site." },
+  { label: '🏢 Facility Guard Deployment', msg: 'I need permanent security guards for a facility.' },
+  { label: '🔍 Background Vetting',        msg: 'I need staff background checks and forensic vetting.' },
+  { label: '💬 General Enquiry',           msg: 'I have a general enquiry about Olswen.' },
 ]
 
 export const tickerItems = [

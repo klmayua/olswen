@@ -10,9 +10,9 @@ export default function ExperienceSection() {
           {/* Left */}
           <ScrollReveal>
             <div>
-              <span className="eyebrow on-dark">Leadership</span>
+              <span className="eyebrow on-dark">Director &amp; Founder</span>
               <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: '#fff', margin: '0.75rem 0 1.25rem', lineHeight: 1.15 }}>Donald Owen Ogbemudia</h2>
-              <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', lineHeight: 1.75 }}>Founder and Director of Operations at Olswen Independence Alliance Ltd. with over 7 years of field experience in security architecture, intelligence operations, and risk management across Nigeria.</p>
+              <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', lineHeight: 1.75 }}>Founder and Director of Operations. Certified in forensic investigation and criminal intelligence. Former research assistant to the Director of Legal Services, 81 Division Headquarters, Nigerian Army. Seven years building Nigeria’s most intelligence-led security firm.</p>
               <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 18, padding: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{ width: 60, height: 60, borderRadius: '50%', background: '#4c35b0', border: '2px solid #7a62d6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1.2rem', fontWeight: 800, color: '#fff', flexShrink: 0 }}>DOO</div>
@@ -30,7 +30,7 @@ export default function ExperienceSection() {
                   ))}
                 </div>
               </div>
-              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 9999, background: '#fff', color: '#5c43c8', textDecoration: 'none' }}>Work With Donald →</a>
+              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#fff', color: '#5c43c8', textDecoration: 'none' }}>Contact Donald</a>
             </div>
           </ScrollReveal>
 

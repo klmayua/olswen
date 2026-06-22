@@ -1,6 +1,7 @@
 'use client'
 import { services } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
+import { IconIntelligence, IconShield, IconEvent, IconBuilding, IconSearch, IconArchitecture } from './icons/Icons'
 
 export default function ServicesSection() {
   return (
@@ -8,9 +9,9 @@ export default function ServicesSection() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, marginBottom: '4rem' }}>
-            <span className="eyebrow">What We Do</span>
-            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Comprehensive Security &amp; Intelligence Solutions</h2>
-            <p style={{ color: '#4a4560', fontSize: '1.05rem', lineHeight: 1.75 }}>Every engagement starts with a security architecture document, not just a staffing roster. Capability built on intelligence, forensics, and operational experience.</p>
+            <span className="eyebrow">Capabilities</span>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Built for Nigeria’s Most Demanding Environments</h2>
+            <p style={{ color: '#4a4560', fontSize: '1.05rem', lineHeight: 1.75 }}>Six core capabilities. Every one designed around a security architecture document — not a headcount. Intelligence, forensics, and seven years of operational proof behind each.</p>
           </div>
         </ScrollReveal>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }} className="services-grid">
@@ -21,7 +22,9 @@ export default function ServicesSection() {
                 onMouseLeave={e => { e.currentTarget.style.borderColor = '#ede9f8'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; const bar = e.currentTarget.querySelector('.svc-bar') as HTMLElement; if (bar) bar.style.opacity = '0'; }}
               >
                 <div className="svc-bar" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right,#5c43c8,#7a62d6)', opacity: 0, transition: 'opacity 0.3s' }} />
-                <div style={{ width: 52, height: 52, borderRadius: '0.9rem', background: '#e8e3fa', border: '1px solid #c8bff2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', marginBottom: '1.5rem' }}>{svc.icon}</div>
+                <div style={{ width: 44, height: 44, borderRadius: 8, background: '#e8e3fa', border: '1px solid #c8bff2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#5c43c8', marginBottom: '1.5rem' }}>
+                  {svc.icon === '🧠' ? <IconIntelligence size={22}/> : svc.icon === '🛡️' ? <IconShield size={22}/> : svc.icon === '🎪' ? <IconEvent size={22}/> : svc.icon === '🏢' ? <IconBuilding size={22}/> : svc.icon === '🔍' ? <IconSearch size={22}/> : <IconArchitecture size={22}/>}
+                </div>
                 <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.05rem', fontWeight: 600, color: '#0c0a18', marginBottom: '0.65rem' }}>{svc.title}</h3>
                 <p style={{ fontSize: '0.88rem', color: '#4a4560', lineHeight: 1.75 }}>{svc.desc}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '1.1rem' }}>
