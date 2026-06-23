@@ -40,7 +40,11 @@
   --width-site: 1200px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -53,11 +57,21 @@ body {
   color: #0c0a18;
   background: #ffffff;
   overflow-x: hidden;
+  max-width: 100%;
   line-height: 1.6;
   font-size: 16px;
 }
 
-* { box-sizing: border-box; }
+@media (max-width: 900px) {
+  body { padding-bottom: 64px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+section, footer, nav, header {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 @media (max-width: 480px) {
   body { font-size: 15px; }
@@ -133,4 +147,15 @@ a { text-decoration: none; color: inherit; }
 @keyframes ticker {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* Mobile: push chatbot FAB above bottom nav */
+@media (max-width: 900px) {
+  .chatbot-root { bottom: calc(64px + 1rem) !important; }
+  .chatbot-window { width: calc(100vw - 2rem) !important; max-width: 340px !important; max-height: 65vh !important; }
+}
+
+/* Hide top navbar logo on mobile — bottom nav handles all navigation */
+@media (max-width: 900px) {
+  .nav-floating-bar { opacity: 0; pointer-events: none !important; }
 }

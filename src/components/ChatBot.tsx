@@ -33,10 +33,10 @@ export default function ChatBot() {
   }
 
   return (
-    <div style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 2000, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem' }}>
+    <div className="chatbot-root" style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 2000, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem' }}>
       {/* Chat window */}
       {isOpen && (
-        <div style={{ width: 330, background: '#fff', border: '1px solid #ede9f8', borderRadius: 18, overflow: 'hidden', display: 'flex', flexDirection: 'column', maxHeight: 480, boxShadow: '0 32px 64px rgba(30,20,66,0.18)' }}>
+        <div className="chatbot-window" style={{ width: 330, background: '#fff', border: '1px solid #ede9f8', borderRadius: 18, overflow: 'hidden', display: 'flex', flexDirection: 'column', maxHeight: 480, boxShadow: '0 32px 64px rgba(30,20,66,0.18)' }}>
           {/* Header */}
           <div style={{ background: 'linear-gradient(135deg,#3d2a8a,#5c43c8)', padding: '0.9rem 1.1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#fff' }}><IconShield size={18} /></div>

@@ -14,6 +14,7 @@ import CTABanner           from '@/components/CTABanner'
 import ContactSection      from '@/components/ContactSection'
 import Footer              from '@/components/Footer'
 import ChatBot             from '@/components/ChatBot'
+import MobileBottomNav     from '@/components/MobileBottomNav'
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <ContactSection />
       <Footer />
       <ChatBot />
+      <MobileBottomNav />
     </>
   )
 }

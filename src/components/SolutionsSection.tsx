@@ -46,7 +46,7 @@ export default function SolutionsSection() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="sols-grid">
           {solutions.map((sol, i) => (
             <ScrollReveal key={i} className={sol.wide ? 'sol-wide' : ''}>
-              <div style={{ background: '#fff', border: '1px solid #ede9f8', borderRadius: 18, overflow: 'hidden', transition: 'all 0.3s', gridColumn: sol.wide ? 'span 2' : 'span 1', cursor: 'default' }}
+              <div className={sol.wide ? 'sol-card sol-card--wide' : 'sol-card'} style={{ background: '#fff', border: '1px solid #ede9f8', borderRadius: 18, overflow: 'hidden', transition: 'all 0.3s', cursor: 'default' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#a28fe6'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(92,67,200,0.08)'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = '#ede9f8'; e.currentTarget.style.boxShadow = 'none'; }}
               >
@@ -69,9 +69,11 @@ export default function SolutionsSection() {
         </div>
       </div>
       <style>{`
+        .sol-card--wide { grid-column: span 2; }
         @media (max-width: 860px) {
           .sols-grid { grid-template-columns: 1fr !important; }
-          .sol-wide > div { grid-column: span 1 !important; }
+          .sol-card--wide { grid-column: span 1 !important; }
+          .sol-card div[style*='padding'] { padding: 1.25rem !important; }
         }
       `}</style>
     </section>
