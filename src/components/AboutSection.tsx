@@ -6,7 +6,7 @@ import { IconTarget, IconSearch, IconSignal, IconTeam } from './icons/Icons'
 
 export default function AboutSection() {
   return (
-    <section id="about" style={{ padding: '7rem 0' }}>
+    <section id="about" className="section-pad" style={{ padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="about-grid">
           {/* Image */}

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import ScrollReveal from './ScrollReveal'
 
 const reasons = [
@@ -10,7 +10,7 @@ const reasons = [
 
 export default function WhySection() {
   return (
-    <section id="why" style={{ background: '#fff', padding: '7rem 0' }}>
+    <section id="why" className="section-pad" style={{ background: '#fff', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>

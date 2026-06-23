@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import { siteConfig } from '@/constants/content'
@@ -18,7 +18,7 @@ export default function ZumaGridSection() {
     { val: 'NDPR', label: 'Compliant' },
   ]
   return (
-    <section id="zumagrid" style={{ background: 'linear-gradient(160deg,#2d1f63 0%,#3d2a8a 60%,#4c35b0 100%)', position: 'relative', overflow: 'hidden', padding: '7rem 0' }}>
+    <section id="zumagrid" className="section-pad" style={{ background: 'linear-gradient(160deg,#2d1f63 0%,#3d2a8a 60%,#4c35b0 100%)', position: 'relative', overflow: 'hidden', padding: '7rem 0' }}>
       {/* Decoration rings */}
       <div style={{ position: 'absolute', right: -100, top: -100, width: 600, height: 600, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)', pointerEvents: 'none' }}>
         <div style={{ position: 'absolute', inset: 60, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.04)' }} />
@@ -49,9 +49,9 @@ export default function ZumaGridSection() {
                   </div>
                 ))}
               </div>
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href={siteConfig.zumagrid} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#fff', color: '#5c43c8', textDecoration: 'none' }}>Visit ZumaGrid</a>
-                <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', textDecoration: 'none' }}>Request ZumaGrid Deployment</a>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }} className="zg-cta-row">
+                <a href={siteConfig.zumagrid} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#fff', color: '#5c43c8', textDecoration: 'none', minHeight: 44 }}>Visit ZumaGrid</a>
+                <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', textDecoration: 'none', minHeight: 44 }}>Request ZumaGrid Deployment</a>
               </div>
             </div>
           </ScrollReveal>
@@ -82,6 +82,7 @@ export default function ZumaGridSection() {
       </div>
       <style>{`
         @media (max-width: 860px) { .zg-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 480px) { .zg-cta-row { flex-direction: column !important; } .zg-cta-row a { width: 100%; } }
       `}</style>
     </section>
   )

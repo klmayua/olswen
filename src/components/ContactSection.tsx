@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { siteConfig } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
 import { IconMapPin, IconPhone, IconMail, IconExternalLink, IconWhatsApp } from './icons/Icons'
@@ -12,7 +12,7 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" style={{ background: '#fff', padding: '7rem 0' }}>
+    <section id="contact" className="section-pad" style={{ background: '#fff', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '3.5rem', alignItems: 'start' }} className="contact-grid">
           {/* Left */}

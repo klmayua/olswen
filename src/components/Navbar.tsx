@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, pointerEvents: 'none' }}>
       {/* Inner floating bar */}
-      <div style={{
+      <div className="nav-floating-bar" style={{
         maxWidth: 1120,
         margin: '1rem auto 0',
         borderRadius: 14,
@@ -99,8 +99,8 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: hamColor, padding: '0.4rem', borderRadius: 6, lineHeight: 0 }}
-          aria-label="Menu"
+          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: hamColor, padding: '0.6rem', borderRadius: 6, lineHeight: 0, minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+          aria-label="Toggle navigation menu"
           className="hamburger-btn"
         >
           {menuOpen ? <IconClose size={20} /> : <IconMenu size={22} />}
@@ -141,6 +141,9 @@ export default function Navbar() {
           .nav-links-desktop { display: none !important; }
           .nav-right-desktop { display: none !important; }
           .hamburger-btn { display: flex !important; }
+        }
+        @media (max-width: 480px) {
+          .nav-floating-bar { margin-left: 0.75rem !important; margin-right: 0.75rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
         }
       `}</style>
     </nav>

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import ScrollReveal from './ScrollReveal'
 
 const clients = [
@@ -20,7 +20,7 @@ const clients = [
 
 export default function DeploymentSection() {
   return (
-    <section id="deployments" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
+    <section id="deployments" className="section-pad" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import { faqs } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
@@ -7,7 +7,7 @@ export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="faq" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
+    <section id="faq" className="section-pad" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>

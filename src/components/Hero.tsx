@@ -7,8 +7,8 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden"
       style={{
-        paddingTop: 'calc(64px + 1.5rem + 5rem)',
-        paddingBottom: '5rem',
+        paddingTop: 'calc(64px + 1.5rem + 3rem)',
+        paddingBottom: '4rem',
         background: `
           radial-gradient(ellipse 50% 60% at 70% 40%, rgba(92,67,200,0.15) 0%, transparent 65%),
           radial-gradient(ellipse 35% 45% at 5% 70%, rgba(201,169,74,0.06) 0%, transparent 55%),
@@ -96,11 +96,11 @@ export default function Hero() {
         </div>
 
         {/* Proof stats row */}
-        <div style={{
+        <div className="hero-stats-row" style={{
           display: 'flex', justifyContent: 'center',
           borderTop: '1px solid rgba(255,255,255,0.09)',
           paddingTop: '2.5rem', marginBottom: '2rem',
-          gap: 0,
+          gap: 0, flexWrap: 'wrap',
         }}>
           {[
             { num: '7+',  label: 'Years Active'      },
@@ -108,8 +108,8 @@ export default function Hero() {
             { num: '4',   label: 'Active Retainers'  },
             { num: '0',   label: 'Major Incidents'   },
           ].map((s, i, arr) => (
-            <div key={s.num} style={{
-              flex: 1, textAlign: 'center', padding: '0 1.25rem',
+            <div key={s.num} className="hero-stat" style={{
+              flex: '1 1 80px', textAlign: 'center', padding: '0.5rem 1.25rem',
               borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.09)' : 'none',
             }}>
               <span style={{ display: 'block', fontFamily: 'var(--font-space-grotesk)', fontSize: '2rem', fontWeight: 800, color: '#fff', lineHeight: 1 }}>
@@ -121,6 +121,13 @@ export default function Hero() {
             </div>
           ))}
         </div>
+        <style>{`
+          @media (max-width: 480px) {
+            .hero-stats-row { gap: 0.5rem !important; }
+            .hero-stat { border-right: none !important; min-width: 40%; }
+            .hero-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.09) !important; }
+          }
+        `}</style>
 
         {/* Trusted-by strip */}
         <div style={{ marginTop: '1.5rem' }}>

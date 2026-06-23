@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import { images } from '@/constants/images'
 import ScrollReveal from './ScrollReveal'
 
@@ -13,7 +13,7 @@ const galleryImages = [
 
 export default function GallerySection() {
   return (
-    <section id="gallery" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
+    <section id="gallery" className="section-pad" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>

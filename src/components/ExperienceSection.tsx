@@ -1,9 +1,9 @@
-import { timeline, directorCredentials } from '@/constants/content'
+﻿import { timeline, directorCredentials } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" style={{ background: '#0c0a18', position: 'relative', overflow: 'hidden', padding: '7rem 0' }}>
+    <section id="experience" className="section-pad" style={{ background: '#0c0a18', position: 'relative', overflow: 'hidden', padding: '7rem 0' }}>
       <div style={{ position: 'absolute', left: -200, top: -200, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle,rgba(92,67,200,0.2) 0%,transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '4rem', alignItems: 'start' }} className="exp-grid">

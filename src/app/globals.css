@@ -42,6 +42,12 @@
 
 html { scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none !important; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
 body {
   font-family: var(--font-inter), system-ui, sans-serif;
   color: #0c0a18;
@@ -49,6 +55,17 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+@media (max-width: 480px) {
+  body { font-size: 15px; }
+}
+
+.section-pad { padding-top: 7rem; padding-bottom: 7rem; }
+@media (max-width: 640px) {
+  .section-pad { padding-top: 4rem !important; padding-bottom: 4rem !important; }
 }
 
 img { display: block; max-width: 100%; }

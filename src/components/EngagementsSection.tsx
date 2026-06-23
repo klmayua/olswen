@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import { engagements } from '@/constants/content'
@@ -6,18 +6,18 @@ import ScrollReveal from './ScrollReveal'
 
 export default function EngagementsSection() {
   return (
-    <section id="engagements" style={{ background: '#fff', padding: '7rem 0' }}>
+    <section id="engagements" className="section-pad" style={{ background: '#fff', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ borderRadius: 28, overflow: 'hidden', position: 'relative', marginBottom: '3rem', border: '1px solid #ede9f8' }}>
-            <div style={{ position: 'relative', height: 400 }}>
+            <div style={{ position: 'relative', height: 'clamp(260px, 40vw, 420px)' }}>
               <Image src={images.stadiumOperations} alt="Olswen deployments" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
             </div>
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right,rgba(30,20,66,0.90) 45%,rgba(30,20,66,0.2))', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 'clamp(2rem,5vw,4rem)' }}>
               <span className="eyebrow on-dark">Marquee Engagements</span>
               <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: '#fff', margin: '0.75rem 0 1rem', maxWidth: 420, lineHeight: 1.15 }}>The Work Speaks for Itself</h2>
               <p style={{ color: 'rgba(255,255,255,0.68)', maxWidth: 380, marginBottom: '2rem', lineHeight: 1.75 }}>Streaming tours that paralysed Lagos. International sporting federations. National music tours across four states. These are not pilot engagements — these are the benchmark.</p>
-              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#c9a94a', color: '#fff', textDecoration: 'none', width: 'fit-content' }}>Start a Consultation</a>
+              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#c9a94a', color: '#fff', textDecoration: 'none', minHeight: 44 }}>Start a Consultation</a>
             </div>
           </div>
         </ScrollReveal>

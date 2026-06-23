@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 import { services } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
 import { IconIntelligence, IconShield, IconEvent, IconBuilding, IconSearch, IconArchitecture } from './icons/Icons'
 
 export default function ServicesSection() {
   return (
-    <section id="services" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
+    <section id="services" className="section-pad" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, marginBottom: '4rem' }}>

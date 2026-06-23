@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import ScrollReveal from './ScrollReveal'
@@ -35,7 +35,7 @@ const solutions = [
 
 export default function SolutionsSection() {
   return (
-    <section id="solutions" style={{ background: '#fff', padding: '7rem 0' }}>
+    <section id="solutions" className="section-pad" style={{ background: '#fff', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, marginBottom: '4rem' }}>

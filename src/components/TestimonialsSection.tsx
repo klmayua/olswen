@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 import { testimonials } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
 import { IconStar } from './icons/Icons'
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" style={{ background: '#fff', padding: '7rem 0' }}>
+    <section id="testimonials" className="section-pad" style={{ background: '#fff', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
           <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>
