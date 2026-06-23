@@ -23,8 +23,8 @@ const solutions = [
     wide: false,
   },
   {
-    img: images.operativePortrait,
-    alt: 'Security operations',
+    img: images.fullSquad,
+    alt: 'Olswen security squad',
     eyebrow: 'Guard Deployment',
     title: 'Professional Guard Deployment',
     desc: 'Regular, Premium, and Supervisory tiers. Every guard is biometrically verified through ZumaGrid from day one. Personnel accountability that paper logs cannot provide.',

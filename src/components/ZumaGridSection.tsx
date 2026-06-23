@@ -73,7 +73,7 @@ export default function ZumaGridSection() {
                 ))}
               </div>
               <div style={{ borderRadius: '0.75rem', overflow: 'hidden', marginTop: '1rem', position: 'relative', height: 160 }}>
-                <Image src={images.patrolVehicle} alt="Olswen patrol operations" fill sizes="(max-width:860px) 100vw, 400px" style={{ objectFit: 'cover', opacity: 0.75 }} />
+                <Image src={images.squad2} alt="Olswen security team deployment" fill sizes="(max-width:860px) 100vw, 400px" style={{ objectFit: 'cover', opacity: 0.75 }} />
               </div>
               <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', textAlign: 'center', marginTop: '0.9rem', lineHeight: 1.5 }}>Nigeria’s first and founding licensed ZumaGrid operator — live in the field.</p>
             </div>
