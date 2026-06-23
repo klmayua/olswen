@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Image from 'next/image'
 import { images } from '@/constants/images'
 import ScrollReveal from './ScrollReveal'
@@ -13,16 +13,7 @@ export default function AboutSection() {
           <ScrollReveal>
             <div style={{ position: 'relative' }}>
               <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '4/5', position: 'relative' }}>
-                <Image src={images.operationalAssets} alt="Olswen operations" fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
-              </div>
-              <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', background: '#fff', border: '1px solid #ede9f8', borderRadius: 10, padding: '1.2rem 1.5rem', boxShadow: '0 12px 40px rgba(92,67,200,0.12)', minWidth: 200 }}>
-                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#8a8599', marginBottom: '0.75rem' }}>Director Credentials</div>
-                {['BA Legal Studies · Staffordshire Univ.', 'Diploma Forensic Investigation', 'Diploma Criminal Intelligence', 'Intl. Criminal Law · Oxford Affil.'].map((c, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.8rem', fontWeight: 500, color: '#2e2a44' }}>
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#5c43c8', flexShrink: 0 }} />
-                    {c}
-                  </div>
-                ))}
+                <Image src={images.eliteAssets} alt="Olswen operational capability" fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
               </div>
             </div>
           </ScrollReveal>
@@ -32,8 +23,8 @@ export default function AboutSection() {
             <div>
               <span className="eyebrow">Who We Are</span>
               <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Security That Starts With Intelligence</h2>
-              <p style={{ marginBottom: '1.25rem', color: '#4a4560', lineHeight: 1.75 }}>Founded in 2018 by Donald Owen Ogbemudia, Olswen Independence Alliance Ltd. is built on a single doctrine: protection begins with intelligence, not personnel. We analyse before we deploy.</p>
-              <p style={{ marginBottom: '2rem', color: '#4a4560', lineHeight: 1.75 }}>From command and control systems for NCDC’s COVID-19 isolation centres to the security architecture behind Nigeria’s biggest entertainment tours and the NFL Africa Camp — every Olswen engagement is built from first principles, not templates.</p>
+              <p style={{ marginBottom: '1.25rem', color: '#4a4560', lineHeight: 1.75 }}>Founded in 2018, Olswen Independence Alliance Ltd. operates on a doctrine most security firms ignore: protection begins with intelligence, not personnel. We assess before we deploy.</p>
+              <p style={{ marginBottom: '2rem', color: '#4a4560', lineHeight: 1.75 }}>From command and control architecture for NCDC&apos;s COVID-19 isolation centres to the security infrastructure behind Nigeria&apos;s biggest entertainment tours and the NFL Africa Camp — every engagement is built from first principles, not templates.</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', margin: '2rem 0' }} className="pillars-grid">
                 {[
                   { Icon: IconTarget,  label: 'Intelligence-First Doctrine' },
@@ -46,10 +37,9 @@ export default function AboutSection() {
                   </div>
                 ))}
               </div>
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="#experience" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#5c43c8', color: '#fff', textDecoration: 'none' }}>Our Track Record →</a>
-                <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: 'transparent', color: '#5c43c8', border: '1.5px solid #a28fe6', textDecoration: 'none' }}>Get In Touch</a>
-              </div>
+              <button onClick={() => { const el = document.getElementById('engagements'); if (el) el.scrollIntoView({ behavior: 'smooth' }) }} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.88rem', fontWeight: 700, color: '#5c43c8', fontFamily: 'var(--font-space-grotesk)', marginTop: '0.5rem', padding: 0 }}>
+                View our engagement record →
+              </button>
             </div>
           </ScrollReveal>
         </div>

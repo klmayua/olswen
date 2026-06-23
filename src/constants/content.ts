@@ -13,14 +13,10 @@ export const siteConfig = {
 }
 
 export const navLinks = [
-  { label: 'About',       href: '#about' },
-  { label: 'Services',    href: '#services' },
-  { label: 'Engagements', href: '#engagements' },
-  { label: 'Technology',  href: '#zumagrid' },
-  { label: 'Gallery',     href: '#gallery' },
-  { label: 'Clients',     href: '#testimonials' },
-  { label: 'FAQ',         href: '#faq' },
-  { label: 'Contact',     href: '#contact' },
+  { label: 'Services',     href: '#services'     },
+  { label: 'Engagements',  href: '#engagements'  },
+  { label: 'Technology',   href: '#zumagrid'     },
+  { label: 'Contact',      href: '#contact'      },
 ]
 
 export const stats = [
@@ -32,37 +28,37 @@ export const stats = [
 
 export const services = [
   {
-    icon: '🧠',
+    icon: 'intelligence',
     title: 'Intelligence & Risk Management',
     desc: 'OSINT, HUMINT, and IMINT-trained threat intelligence. Real-time assessments, vulnerability profiling, and proactive mitigation strategies for businesses and events.',
     tags: ['OSINT', 'HUMINT', 'Threat Assessment'],
   },
   {
-    icon: '🛡️',
+    icon: 'shield',
     title: 'VIP & Close Protection',
     desc: 'Tailored executive protection for artists, athletes, executives, and dignitaries. Advance planning, route intelligence, transit security, and multi-agency coordination.',
     tags: ['Artists', 'Executives', 'Athletes'],
   },
   {
-    icon: '🎪',
+    icon: 'event',
     title: 'Event Security Architecture',
     desc: 'Full-spectrum event security from conception to execution. Crowd intelligence, access control, contingency planning, and live state agency coordination.',
     tags: ['Concerts', 'Sports', 'Corporate'],
   },
   {
-    icon: '🏢',
+    icon: 'building',
     title: 'Enterprise & Facility Security',
     desc: 'Bespoke permanent security architecture for hospitals, malls, construction sites, and corporate facilities. Three-tier guard structure with supervisory oversight.',
     tags: ['Healthcare', 'Retail', 'Industrial'],
   },
   {
-    icon: '🔍',
+    icon: 'search',
     title: 'Forensic Investigation & Vetting',
     desc: 'Certified forensic investigation support and comprehensive employee background screening. Criminal intelligence analysis for insider risk reduction.',
     tags: ['Forensics', 'Background Checks', 'Due Diligence'],
   },
   {
-    icon: '⚙️',
+    icon: 'architecture',
     title: 'Security Consulting & Architecture',
     desc: 'Strategic security design for organisations entering Nigeria and West Africa. Command systems, access architecture, SOPs, and ZumaGrid technology deployment.',
     tags: ['Nigeria Entry', 'ZumaGrid', 'SOPs'],
@@ -164,12 +160,12 @@ export const faqs = [
 ]
 
 export const chatOptions = [
-  { label: '🎪 Event Security',            msg: 'I need event security for an upcoming event.' },
-  { label: '🛡️ VIP / Close Protection',   msg: 'I need VIP or close protection services.' },
-  { label: '📡 ZumaGrid Deployment',       msg: "I'm interested in deploying ZumaGrid on my site." },
-  { label: '🏢 Facility Guard Deployment', msg: 'I need permanent security guards for a facility.' },
-  { label: '🔍 Background Vetting',        msg: 'I need staff background checks and forensic vetting.' },
-  { label: '💬 General Enquiry',           msg: 'I have a general enquiry about Olswen.' },
+  { label: 'Event Security',            msg: 'I need event security for an upcoming event.' },
+  { label: 'VIP / Close Protection',    msg: 'I need VIP or close protection services.' },
+  { label: 'ZumaGrid Deployment',       msg: "I'm interested in deploying ZumaGrid on my site." },
+  { label: 'Facility Guard Deployment', msg: 'I need permanent security guards for a facility.' },
+  { label: 'Background Vetting',        msg: 'I need staff background checks and forensic vetting.' },
+  { label: 'General Enquiry',           msg: 'I have a general enquiry about Olswen.' },
 ]
 
 export const tickerItems = [

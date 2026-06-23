@@ -23,7 +23,7 @@ export default function ServicesSection() {
               >
                 <div className="svc-bar" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right,#5c43c8,#7a62d6)', opacity: 0, transition: 'opacity 0.3s' }} />
                 <div style={{ width: 44, height: 44, borderRadius: 8, background: '#e8e3fa', border: '1px solid #c8bff2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#5c43c8', marginBottom: '1.5rem' }}>
-                  {svc.icon === '🧠' ? <IconIntelligence size={22}/> : svc.icon === '🛡️' ? <IconShield size={22}/> : svc.icon === '🎪' ? <IconEvent size={22}/> : svc.icon === '🏢' ? <IconBuilding size={22}/> : svc.icon === '🔍' ? <IconSearch size={22}/> : <IconArchitecture size={22}/>}
+                  {svc.icon === 'intelligence' ? <IconIntelligence size={22}/> : svc.icon === 'shield' ? <IconShield size={22}/> : svc.icon === 'event' ? <IconEvent size={22}/> : svc.icon === 'building' ? <IconBuilding size={22}/> : svc.icon === 'search' ? <IconSearch size={22}/> : <IconArchitecture size={22}/>}
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.05rem', fontWeight: 600, color: '#0c0a18', marginBottom: '0.65rem' }}>{svc.title}</h3>
                 <p style={{ fontSize: '0.88rem', color: '#4a4560', lineHeight: 1.75 }}>{svc.desc}</p>

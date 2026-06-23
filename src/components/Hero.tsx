@@ -1,74 +1,146 @@
-import Image from 'next/image'
-import { images } from '@/constants/images'
-import { siteConfig } from '@/constants/content'
+'use client'
+import { scrollToSection } from '@/lib/utils'
 
 export default function Hero() {
   return (
-    <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', background: 'linear-gradient(145deg,#1e1442 0%,#2d1f63 45%,#3d2a8a 100%)', overflow: 'hidden', paddingTop: 'calc(64px + 1rem + 4rem)' }}>
-      {/* Dot grid */}
-      <div className="dot-grid" style={{ position: 'absolute', inset: 0 }} />
-      {/* Glow */}
-      <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: 700, height: 700, borderRadius: '50%', background: 'radial-gradient(circle,rgba(92,67,200,0.25) 0%,transparent 70%)', pointerEvents: 'none' }} />
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center overflow-hidden"
+      style={{
+        paddingTop: 'calc(64px + 1.5rem + 5rem)',
+        paddingBottom: '5rem',
+        background: `
+          radial-gradient(ellipse 50% 60% at 70% 40%, rgba(92,67,200,0.15) 0%, transparent 65%),
+          radial-gradient(ellipse 35% 45% at 5% 70%, rgba(201,169,74,0.06) 0%, transparent 55%),
+          linear-gradient(160deg, #0a0818 0%, #160f38 45%, #1e1550 100%)
+        `,
+      }}
+    >
+      {/* Tactical pattern overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          zIndex: 1,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='rgba(255%2C255%2C255%2C0.04)' stroke-width='0.75'%3E%3Cpath d='M40 8 L68 24 L68 56 L40 72 L12 56 L12 24 Z'/%3E%3Ccircle cx='40' cy='40' r='4' stroke-width='0.5'/%3E%3Ccircle cx='40' cy='40' r='12' stroke-width='0.4' stroke-dasharray='2 4'/%3E%3Cpath d='M40 28 L40 24 M40 52 L40 56 M28 40 L24 40 M52 40 L56 40' stroke-width='0.6'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '80px 80px',
+          backgroundRepeat: 'repeat',
+          opacity: 1,
+        }}
+      />
 
-      <div style={{ position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3.5rem', alignItems: 'center', width: '100%', maxWidth: 1200, margin: '0 auto', padding: '4rem clamp(1.25rem,5vw,3.5rem) 5rem' }} className="hero-grid">
-        {/* Left */}
-        <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 9999, padding: '0.4rem 1rem', marginBottom: '1.75rem', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)' }}>
-            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#d8be70', flexShrink: 0, animation: 'pulse 2s infinite', display: 'inline-block' }} />
-            Nigeria&apos;s Intelligence-Led Security Firm
-          </div>
-          <h1 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: 'clamp(2.4rem,5vw,3.6rem)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.15, fontFamily: 'var(--font-space-grotesk)' }}>
-            When Stakes Are Highest,{' '}
-            <em className="text-gold-gradient" style={{ fontStyle: 'normal' }}>Olswen Delivers.</em>
-          </h1>
-          <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '1.1rem', maxWidth: 480, marginBottom: '2.5rem', lineHeight: 1.7 }}>
-            Intelligence-led security operations, close protection, and risk management — protecting Nigeria's most high-profile events, assets, and individuals.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', marginBottom: '3rem' }}>
-            <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 8, background: '#c9a94a', color: '#fff', textDecoration: 'none', transition: 'all 0.2s' }}>
-              Request Consultation →
-            </a>
-            <a href="#engagements" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '1rem', fontWeight: 700, padding: '1.1rem 2.8rem', borderRadius: 8, background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s' }}>
-              View Engagements
-            </a>
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-            {['NFL Africa', "Davido Tour '25", 'Kai Cenat', 'IShowSpeed', 'FIFA WC Qualifiers', 'SuperSport', 'RC 1466641'].map(item => (
-              <span key={item} style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.3rem 0.85rem', borderRadius: 9999 }}>
-                {item}
+      {/* Content */}
+      <div className="relative mx-auto w-full max-w-3xl px-6 text-center" style={{ zIndex: 10 }}>
+        {/* Credential pill */}
+        <div className="mb-8 inline-flex items-center gap-2 rounded-md border px-3 py-1.5"
+          style={{ borderColor: 'rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.06)' }}>
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#c9a94a', display: 'inline-block', flexShrink: 0 }} />
+          <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)' }}>
+            Licensed · RC 1466641 · ZumaGrid Founding Operator
+          </span>
+        </div>
+
+        {/* H1 */}
+        <h1 style={{
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: 'clamp(2.8rem, 6.5vw, 5rem)',
+          fontWeight: 800,
+          lineHeight: 1.06,
+          letterSpacing: '-0.03em',
+          color: '#fff',
+          marginBottom: '1.5rem',
+        }}>
+          When Stakes Are<br />
+          Highest,{' '}
+          <span style={{
+            background: 'linear-gradient(120deg, #d8be70, #c9a94a)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Olswen Delivers.
+          </span>
+        </h1>
+
+        {/* Subheading */}
+        <p style={{
+          fontSize: '1.1rem',
+          color: 'rgba(255,255,255,0.60)',
+          maxWidth: '540px',
+          margin: '0 auto 2.5rem',
+          lineHeight: 1.75,
+        }}>
+          Intelligence-led security. Close protection. Risk management.
+          Protecting Nigeria&apos;s most high-profile events, assets, and individuals.
+        </p>
+
+        {/* CTA buttons */}
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
+          <button onClick={() => scrollToSection('contact')} style={{
+            background: '#c9a94a', color: '#0a0818', fontWeight: 700,
+            borderRadius: '8px', padding: '0.9rem 2.2rem', fontSize: '0.9rem',
+            border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-grotesk)',
+            transition: 'all 0.2s',
+          }}>
+            Request Consultation
+          </button>
+          <button onClick={() => scrollToSection('engagements')} style={{
+            background: 'transparent', color: '#fff',
+            border: '1.5px solid rgba(255,255,255,0.22)',
+            borderRadius: '8px', padding: '0.9rem 2.2rem', fontSize: '0.9rem',
+            cursor: 'pointer', fontFamily: 'var(--font-space-grotesk)',
+            transition: 'all 0.2s',
+          }}>
+            View Engagements
+          </button>
+        </div>
+
+        {/* Proof stats row */}
+        <div style={{
+          display: 'flex', justifyContent: 'center',
+          borderTop: '1px solid rgba(255,255,255,0.09)',
+          paddingTop: '2.5rem', marginBottom: '2rem',
+          gap: 0,
+        }}>
+          {[
+            { num: '7+',  label: 'Years Active'      },
+            { num: '50+', label: 'Engagements'       },
+            { num: '4',   label: 'Active Retainers'  },
+            { num: '0',   label: 'Major Incidents'   },
+          ].map((s, i, arr) => (
+            <div key={s.num} style={{
+              flex: 1, textAlign: 'center', padding: '0 1.25rem',
+              borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.09)' : 'none',
+            }}>
+              <span style={{ display: 'block', fontFamily: 'var(--font-space-grotesk)', fontSize: '2rem', fontWeight: 800, color: '#fff', lineHeight: 1 }}>
+                {s.num}
+              </span>
+              <span style={{ display: 'block', fontSize: '0.68rem', fontWeight: 500, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.05em', marginTop: '0.3rem' }}>
+                {s.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Trusted-by strip */}
+        <div style={{ marginTop: '1.5rem' }}>
+          <span style={{ display: 'block', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.28)', marginBottom: '0.85rem' }}>
+            Trusted By
+          </span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+            {['NFL Africa', 'Davido', 'Kai Cenat', 'IShowSpeed', 'FIFA', 'SuperSport'].map((name, i, arr) => (
+              <span key={name} style={{
+                fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.38)',
+                padding: '0 0.9rem',
+                borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                lineHeight: 1,
+              }}>
+                {name}
               </span>
             ))}
           </div>
         </div>
-
-        {/* Right */}
-        <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 520 }}>
-            <div style={{ borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)', aspectRatio: '4/5', position: 'relative' }}>
-              <Image src={images.operativePortrait} alt="Olswen elite security personnel" fill sizes="(max-width:860px) 100vw, 520px" style={{ objectFit: 'cover', objectPosition: 'top center' }} priority />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(30,20,66,0.6) 0%,transparent 50%)', borderRadius: 18 }} />
-            </div>
-            {/* Floating stat card */}
-            <div style={{ position: 'absolute', bottom: '-1.5rem', left: '-1.5rem', background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(12px)', borderRadius: 10, padding: '1.1rem 1.4rem', boxShadow: '0 20px 40px rgba(30,20,66,0.25)', minWidth: 180, animation: 'float 3.5s ease-in-out infinite' }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#8a8599', marginBottom: '0.3rem' }}>Operations Status</div>
-              <div style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.4rem', fontWeight: 800, color: '#3d2a8a', lineHeight: 1 }}>Active · Live</div>
-              <div style={{ fontSize: '0.72rem', color: '#8a8599', marginTop: '0.2rem' }}>ZumaGrid-backed deployment</div>
-            </div>
-            {/* Floating badge */}
-            <div style={{ position: 'absolute', top: '1.5rem', right: '-1rem', background: '#c9a94a', color: '#fff', borderRadius: 10, padding: '0.75rem 1.1rem', boxShadow: '0 8px 24px rgba(201,169,74,0.35)', textAlign: 'center', animation: 'float 4s ease-in-out infinite 0.5s' }}>
-              <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.2rem', fontWeight: 800, display: 'block' }}>7+</span>
-              <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', marginTop: '0.15rem', opacity: 0.85 }}>Years Operating</span>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <style>{`
-        @media (max-width: 860px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-grid > div:last-child { order: -1; }
-        }
-      `}</style>
     </section>
   )
 }

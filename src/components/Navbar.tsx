@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { images } from '@/constants/images'
 import { navLinks, siteConfig } from '@/constants/content'
 import { scrollToSection } from '@/lib/utils'
-import { IconWhatsApp, IconMenu, IconClose } from './icons/Icons'
+import { IconMenu, IconClose } from './icons/Icons'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -42,14 +42,11 @@ export default function Navbar() {
         boxShadow: 'none',
       }
 
-  const logoName  = scrolled ? '#2d1f63' : '#fff'
-  const logoTag   = scrolled ? '#8a8599' : 'rgba(255,255,255,0.5)'
   const linkColor = scrolled ? '#4a4560' : 'rgba(255,255,255,0.72)'
   const linkHoverBg = scrolled ? 'rgba(92,67,200,0.06)' : 'rgba(255,255,255,0.08)'
   const linkHoverColor = scrolled ? '#4c35b0' : '#fff'
-  const waColor   = scrolled ? '#4a4560' : 'rgba(255,255,255,0.65)'
-  const ctaBg     = scrolled ? '#5c43c8' : '#fff'
-  const ctaColor  = scrolled ? '#fff' : '#3d2a8a'
+  const ctaBg     = scrolled ? '#5c43c8' : '#c9a94a'
+  const ctaColor  = scrolled ? '#fff' : '#0f0d1a'
   const hamColor  = scrolled ? '#2e2a44' : '#fff'
 
   return (
@@ -69,12 +66,8 @@ export default function Navbar() {
         ...bar,
       }}>
         {/* Logo */}
-        <button onClick={() => handleNav('#hero')} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-          <Image src={images.logo} alt="Olswen logo" width={38} height={38} style={{ objectFit: 'contain' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
-            <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 800, letterSpacing: '0.08em', color: logoName, transition: 'color 0.3s' }}>OLSWEN</span>
-            <span style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: logoTag, marginTop: '0.05rem', transition: 'color 0.3s' }}>Security · Intelligence</span>
-          </div>
+        <button onClick={() => handleNav('#hero')} style={{ display: 'flex', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+          <Image src={images.logo} alt="Olswen" width={40} height={40} style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
         </button>
 
         {/* Desktop nav links */}
@@ -95,17 +88,6 @@ export default function Navbar() {
 
         {/* Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="nav-right-desktop">
-          <a
-            href={`https://wa.me/${siteConfig.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', fontWeight: 600, color: waColor, padding: '0.4rem 0.6rem', borderRadius: 7, textDecoration: 'none', transition: 'color 0.2s' }}
-            onMouseEnter={e => (e.currentTarget.style.color = scrolled ? '#25d366' : '#4ade80')}
-            onMouseLeave={e => (e.currentTarget.style.color = waColor)}
-          >
-            <IconWhatsApp size={16} />
-            WhatsApp
-          </a>
           <button
             onClick={() => handleNav('#contact')}
             style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.82rem', fontWeight: 700, padding: '0.55rem 1.25rem', borderRadius: 8, border: 'none', cursor: 'pointer', background: ctaBg, color: ctaColor, transition: 'all 0.3s', whiteSpace: 'nowrap' }}
@@ -147,10 +129,7 @@ export default function Navbar() {
             ))}
           </div>
           <div style={{ paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.9rem', borderRadius: 8, border: '1.5px solid #25d366', color: '#25d366', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem' }}>
-              <IconWhatsApp size={18} />WhatsApp
-            </a>
-            <button onClick={() => handleNav('#contact')} style={{ padding: '0.9rem', borderRadius: 8, background: '#5c43c8', color: '#fff', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: '0.9rem' }}>
+              <button onClick={() => handleNav('#contact')} style={{ padding: '0.9rem', borderRadius: 8, background: '#5c43c8', color: '#fff', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: '0.9rem' }}>
               Request Consultation
             </button>
           </div>

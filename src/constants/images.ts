@@ -16,4 +16,16 @@ export const images = {
   patrolVehicleImg:  '/assets/images/patrol-vehicle.jpg',
   deployments:       '/assets/images/deployments.jpg',
   eventSolutions:    '/assets/images/event-solutions.jpg',
+  // Site_Images — real operational photos
+  eventGallery:      '/assets/images/event_gallery.jpg',
+  eventPix1:         '/assets/images/event_pix_gallery.jpg',
+  eventPix2:         '/assets/images/event_pix_gallery_02.jpg',
+  fullSquad:         '/assets/images/full squad.jpg',
+  gallery:           '/assets/images/gallery.jpg',
+  hilux:             '/assets/images/hilux.jpg',
+  lexusSuv:          '/assets/images/lexus_suv.jpg',
+  prado:             '/assets/images/prado2.jpg',
+  squad:             '/assets/images/squad.jpg',
+  squad2:            '/assets/images/squad2.jpg',
+  squad3:            '/assets/images/squad3.jpg',
 } as const

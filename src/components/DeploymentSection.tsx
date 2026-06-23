@@ -1,56 +1,53 @@
 'use client'
-import Image from 'next/image'
-import { images } from '@/constants/images'
-import { deployments } from '@/constants/content'
 import ScrollReveal from './ScrollReveal'
+
+const clients = [
+  { name: 'NFL Africa',           cat: 'International Sports'     },
+  { name: 'Davido',               cat: 'National Tour · 4 States' },
+  { name: 'Kai Cenat',            cat: 'Content Tour · 2026'      },
+  { name: 'IShowSpeed',           cat: 'Content Tour · 2026'      },
+  { name: 'FIFA',                 cat: 'World Cup Qualifiers'      },
+  { name: 'SuperSport',           cat: 'NaijaSuper8 Tournament'   },
+  { name: 'Sporting Lagos FC',    cat: 'Football · Active Retainer'},
+  { name: 'Inter Lagos FC',       cat: 'Football · Active Retainer'},
+  { name: 'LifeCenter Hospitals', cat: 'Healthcare · 3 Locations' },
+  { name: 'Xylo Mall by Mazo',    cat: 'Commercial Retail · VI'   },
+  { name: 'Truth Beach Club',     cat: 'Hospitality · Landmark'   },
+  { name: 'Hov Bar Lekki',        cat: 'Nightlife'                },
+  { name: 'Flash Gas',            cat: 'Industrial · Lekki'       },
+  { name: 'NGDL Services',        cat: 'Construction'             },
+]
 
 export default function DeploymentSection() {
   return (
     <section id="deployments" style={{ background: '#f7f6fb', padding: '7rem 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <ScrollReveal>
-          <div style={{ maxWidth: 640, marginBottom: '4rem' }}>
-            <span className="eyebrow">Live Deployments</span>
-            <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18' }}>Active Security Deployments Across Lagos</h2>
-            <p style={{ color: '#4a4560', fontSize: '1.05rem', lineHeight: 1.75 }}>Every deployment runs a bespoke security architecture designed for that environment’s specific risk profile — not a templated guard rotation.</p>
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>Trusted By</span>
           </div>
+          <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1rem', color: '#0c0a18', textAlign: 'center' }}>
+            The Firms and Institutions That Trust Olswen
+          </h2>
+          <p style={{ color: '#4a4560', fontSize: '1.05rem', lineHeight: 1.75, textAlign: 'center', maxWidth: 640, margin: '0 auto 3.5rem' }}>
+            Active retainer clients and completed engagements across sport, entertainment, healthcare, hospitality, and industry.
+          </p>
         </ScrollReveal>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }} className="depl-grid">
-          <ScrollReveal>
-            <div style={{ background: '#2d1f63', borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', position: 'relative', height: 440, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Image src={images.clientLogoGrid} alt="Olswen active deployment clients" fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: 'contain' }} />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div>
-              <span className="eyebrow">Current Clients</span>
-              <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '1.6rem', fontWeight: 700, color: '#0c0a18', margin: '0.6rem 0 0.5rem' }}>Six Active Client Environments</h3>
-              <p style={{ color: '#4a4560', marginBottom: 0, lineHeight: 1.75 }}>Each client site has its own security architecture document — risk-rated, supervised, and reviewed quarterly. Six environments. Hundreds of personnel hours. Zero major incidents.</p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', margin: '1.5rem 0 2rem' }} className="depl-clients-grid">
-                {deployments.map((d, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: '#fff', border: '1px solid #ede9f8', borderRadius: 10, padding: '0.9rem 1.1rem', transition: 'all 0.2s', cursor: 'default' }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = '#a28fe6'; e.currentTarget.style.background = '#f4f1fd'; }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = '#ede9f8'; e.currentTarget.style.background = '#fff'; }}
-                  >
-                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#5c43c8', flexShrink: 0 }} />
-                    <div>
-                      <span style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.85rem', fontWeight: 700, color: '#0c0a18', display: 'block', lineHeight: 1.2 }}>{d.name}</span>
-                      <span style={{ fontSize: '0.72rem', color: '#8a8599', marginTop: '0.1rem', display: 'block' }}>{d.cat}</span>
-                    </div>
-                  </div>
-                ))}
+        <div style={{ display: 'grid', gap: '0.75rem', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))' }}>
+          {clients.map((client, i) => (
+            <ScrollReveal key={i}>
+              <div
+                style={{ borderRadius: 12, border: '1px solid #ede9f8', background: '#fff', padding: '1.25rem 1rem', textAlign: 'center', transition: 'all 0.2s', cursor: 'default' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#a28fe6'; e.currentTarget.style.background = '#f4f1fd'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#ede9f8'; e.currentTarget.style.background = '#fff'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <p style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '0.88rem', fontWeight: 700, color: '#0c0a18', marginBottom: '0.3rem' }}>{client.name}</p>
+                <p style={{ fontSize: '0.72rem', color: '#8a8599', lineHeight: 1.4 }}>{client.cat}</p>
               </div>
-              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.875rem', fontWeight: 700, padding: '0.85rem 2rem', borderRadius: 8, background: '#5c43c8', color: '#fff', textDecoration: 'none' }}>Discuss Your Deployment</a>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
-      <style>{`
-        @media (max-width: 860px) {
-          .depl-grid { grid-template-columns: 1fr !important; }
-          .depl-clients-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   )
 }
