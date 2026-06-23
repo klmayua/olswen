@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   title: 'Olswen Independence Alliance — Security, Intelligence & Risk Management | Lagos, Nigeria',
   description: "Nigeria's intelligence-first security firm. Close protection, event security, forensic vetting, and enterprise deployments. Trusted by NFL Africa, Davido, Kai Cenat, IShowSpeed, FIFA. RC 1466641.",
   keywords: 'security company Nigeria, close protection Lagos, event security Nigeria, VIP protection Lagos, Olswen, ZumaGrid, forensic investigation Nigeria, security firm Lagos',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
