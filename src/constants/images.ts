@@ -28,4 +28,5 @@ export const images = {
   squad:             '/assets/images/squad.jpg',
   squad2:            '/assets/images/squad2.jpg',
   squad3:            '/assets/images/squad3.jpg',
+  timeless01:        '/assets/images/timeless_01.jpg',
 } as const

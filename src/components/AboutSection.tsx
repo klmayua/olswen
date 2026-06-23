@@ -13,7 +13,7 @@ export default function AboutSection() {
           <ScrollReveal>
             <div style={{ position: 'relative' }}>
               <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '4/5', position: 'relative' }}>
-                <Image src={images.eliteAssets} alt="Olswen operational capability" fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+                <Image src={images.timeless01} alt="Olswen operational capability" fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
               </div>
             </div>
           </ScrollReveal>
