@@ -16,7 +16,7 @@ const serviceLinks = [
 export default function Footer() {
   return (
     <footer style={{ background: '#0c0a18', color: 'rgba(255,255,255,0.6)', padding: '4.5rem 0 2rem' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
+      <div className="footer-inner" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(1.25rem,5vw,3.5rem)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3.5rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }} className="footer-grid">
           {/* Brand */}
           <div>
@@ -86,7 +86,8 @@ export default function Footer() {
       </div>
       <style>{`
         @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr !important; } }
-        @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 600px)  { .footer-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px)  { .footer-inner { padding-bottom: calc(2rem + 64px) !important; } }
       `}</style>
     </footer>
   )
