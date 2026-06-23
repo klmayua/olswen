@@ -155,7 +155,7 @@ a { text-decoration: none; color: inherit; }
   .chatbot-window { width: calc(100vw - 2rem) !important; max-width: 340px !important; max-height: 65vh !important; }
 }
 
-/* Hide top navbar logo on mobile — bottom nav handles all navigation */
+/* Mobile: show floating bar (logo visible) but hide links and CTA — bottom nav handles navigation */
 @media (max-width: 900px) {
-  .nav-floating-bar { opacity: 0; pointer-events: none !important; }
+  .nav-floating-bar { pointer-events: all !important; opacity: 1 !important; }
 }
