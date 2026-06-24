@@ -82,10 +82,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="nav-right-desktop">
+        {/* Right — CTA always visible, extra desktop items hidden on mobile */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={() => handleNav('#contact')}
+            className="nav-cta"
             style={{ display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-space-grotesk)', fontSize: '0.82rem', fontWeight: 700, padding: '0.55rem 1.25rem', borderRadius: 8, border: 'none', cursor: 'pointer', background: ctaBg, color: ctaColor, transition: 'all 0.3s', whiteSpace: 'nowrap' }}
           >
             Request Consultation
@@ -97,10 +98,10 @@ export default function Navbar() {
       <style>{`
         @media (max-width: 900px) {
           .nav-links-desktop { display: none !important; }
-          .nav-right-desktop { display: none !important; }
         }
         @media (max-width: 480px) {
           .nav-floating-bar { margin-left: 0.75rem !important; margin-right: 0.75rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+          .nav-cta { font-size: 0.75rem !important; padding: 0.45rem 0.9rem !important; }
         }
       `}</style>
     </nav>
